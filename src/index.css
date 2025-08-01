@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background: #0d1117;
+    color: #e6edf3;
+  }
+  
+  pre, code {
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  }
+}
+
+@layer components {
+  .code-bg {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #21262d 100%);
+  }
+  
+  .terminal-bg {
+    background: #161b22;
+    border: 1px solid #30363d;
+  }
+  
+  .card-dark {
+    background: rgba(22, 27, 34, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid #30363d;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-4 rounded-md transition-all duration-200 border border-blue-500 hover:border-blue-400;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-800 hover:bg-gray-700 text-gray-200 font-medium py-2 px-3 rounded-md transition-all duration-200 border border-gray-600 hover:border-gray-500;
+  }
+  
+  .input-field {
+    @apply bg-gray-900 border border-gray-600 text-gray-200 rounded-md px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-400;
+  }
+  
+  .template-card {
+    @apply border border-gray-600 rounded-lg p-4 transition-all duration-200 cursor-pointer hover:border-blue-500 hover:bg-gray-800/50;
+  }
+  
+  .btn-secondary-sm {
+    @apply px-2 py-1 text-xs bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 transition-colors border border-gray-600;
+  }
+  
+  .template-card.selected {
+    @apply border-blue-500 bg-blue-500/10;
+  }
+  
+  .code-editor {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+  }
+  
+  .syntax-highlight {
+    color: #7c3aed;
+  }
+  
+  .syntax-string {
+    color: #10b981;
+  }
+  
+  .syntax-comment {
+    color: #6b7280;
+  }
+}
