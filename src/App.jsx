@@ -754,6 +754,15 @@ SOFTWARE.`;
                   <span>GitHub</span>
                 </a>
                 <a 
+                  href="https://github.com/somyadipghosh/readmegenerator" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn-secondary flex items-center space-x-2"
+                >
+                  <GitBranch className="w-4 h-4" />
+                  <span>Contribute</span>
+                </a>
+                <a 
                   href="https://www.somyadip.me/" 
                   target="_blank" 
                   rel="noopener noreferrer"
