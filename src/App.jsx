@@ -1240,7 +1240,7 @@ Focus on:
             <div className="flex items-center space-x-3">
               <div className="flex items-center space-x-2">
                 <Terminal className="w-8 h-8 text-blue-500" />
-                <h1 className="text-2xl font-bold text-white">README.dev</h1>
+                <h1 className="text-2xl font-bold text-white">IntelliReadme</h1>
               </div>
               <span className="px-2 py-1 text-xs bg-blue-500/20 text-blue-400 rounded-full border border-blue-500/30">
                 v2.0.1
@@ -1334,9 +1334,9 @@ Focus on:
         {/* Features Section */}
         <div className="mb-16" id="features">
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-white mb-4">Why Choose README.dev?</h3>
+            <h3 className="text-3xl font-bold text-white mb-4">Why Choose IntelliReadme?</h3>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Powerful features designed to create professional documentation with ease
+              Intelligent features designed to create professional documentation with ease
             </p>
           </div>
           
@@ -2102,10 +2102,10 @@ Focus on:
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <Terminal className="w-6 h-6 text-blue-500" />
-                <span className="text-white font-semibold">README.dev</span>
+                <span className="text-white font-semibold">IntelliReadme</span>
               </div>
               <p className="text-gray-400 text-sm mb-4">
-                Professional README generator powered by AI. 
+                Intelligent README generator powered by AI. 
                 Create beautiful documentation for your projects in seconds.
               </p>
               <div className="flex items-center space-x-3">
@@ -2202,7 +2202,7 @@ Focus on:
           </div>
           <div className="border-t border-gray-700 mt-8 pt-6 flex flex-col md:flex-row items-center justify-between">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2025 README.dev. Built with ❤️ by{' '}
+              © 2025 IntelliReadme. Built with ❤️ by{' '}
               <a 
                 href="https://www.somyadip.me/" 
                 target="_blank" 

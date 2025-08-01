@@ -1,4 +1,4 @@
-# 🚀 README.dev - AI-Powered README Generator
+# 🧠 IntelliReadme - AI-Powered README Generator
 
 [![React](https://img.shields.io/badge/React-18-blue?logo=react)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?logo=vite)](https://vitejs.dev/)
@@ -6,12 +6,12 @@
 [![Google Gemini AI](https://img.shields.io/badge/Google_Gemini-AI-orange?logo=google)](https://ai.google.dev/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> **🎯 The ultimate AI-powered README generator that creates stunning, comprehensive documentation with zero placeholders and maximum visual appeal.**
+> **🧠 IntelliReadme: The intelligent AI-powered README generator that creates stunning, comprehensive documentation with zero placeholders and maximum visual appeal.**
 
-🌐 **Live Demo**: [README.dev](http://localhost:5173)  
+🌐 **Live Demo**: [IntelliReadme](http://localhost:5173)  
 👨‍💻 **Developer**: [Somyadip Ghosh](https://www.somyadip.me/)  
-📂 **Repository**: [GitHub](https://github.com/somyadipghosh/readmegenerator)  
-⭐ **Contribute**: [Support on GitHub](https://github.com/somyadipghosh/readmegenerator)
+📂 **Repository**: [GitHub](https://github.com/somyadipghosh/intellireadme)  
+⭐ **Contribute**: [Support on GitHub](https://github.com/somyadipghosh/intellireadme)
 
 ## ✨ Revolutionary Features
 
@@ -65,8 +65,8 @@ Before running this project, make sure you have:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/somyadipghosh/readmegenerator.git
-cd readmegenerator
+git clone https://github.com/somyadipghosh/intellireadme.git
+cd intellireadme
 ```
 
 ### 2. Install Dependencies
@@ -246,7 +246,7 @@ Quality scores range from 0-100 with detailed breakdowns for improvement areas.
 
 ## 🤝 Contributing
 
-We welcome contributions to README.dev! Here's how you can help:
+We welcome contributions to IntelliReadme! Here's how you can help:
 
 ### 🌟 **Ways to Contribute**
 - 🐛 **Bug Reports**: Submit detailed issue reports
@@ -367,11 +367,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <div align="center">
   <h3>🌟 Star this project if you find it useful! 🌟</h3>
   <p>Built with ❤️ by <a href="https://www.somyadip.me/">Somyadip Ghosh</a></p>
-  <p>© 2025 README.dev. All rights reserved.</p>
+  <p>© 2025 IntelliReadme. All rights reserved.</p>
   
   <br>
   
-  <a href="https://github.com/somyadipghosh/readmegenerator">⭐ Star on GitHub</a> •
-  <a href="https://github.com/somyadipghosh/readmegenerator/issues">🐛 Report Bug</a> •
-  <a href="https://github.com/somyadipghosh/readmegenerator/issues">💡 Request Feature</a>
+  <a href="https://github.com/somyadipghosh/intellireadme">⭐ Star on GitHub</a> •
+  <a href="https://github.com/somyadipghosh/intellireadme/issues">🐛 Report Bug</a> •
+  <a href="https://github.com/somyadipghosh/intellireadme/issues">💡 Request Feature</a>
 </div>
