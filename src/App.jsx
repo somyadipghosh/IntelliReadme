@@ -72,6 +72,13 @@ function App() {
   const [showCustomPrompt, setShowCustomPrompt] = useState(false);
   const [readmeQuality, setReadmeQuality] = useState(null);
   const [exportFormat, setExportFormat] = useState('markdown');
+  
+  // README Analysis states
+  const [analysisRepoUrl, setAnalysisRepoUrl] = useState('');
+  const [analysisReadmeContent, setAnalysisReadmeContent] = useState('');
+  const [analysisLoading, setAnalysisLoading] = useState(false);
+  const [analysisSuggestions, setAnalysisSuggestions] = useState([]);
+  const [showAnalysisSuggestions, setShowAnalysisSuggestions] = useState(false);
 
   const extractRepoInfo = (url) => {
     const regex = /github\.com\/([^\/]+)\/([^\/]+)/;
@@ -184,22 +191,32 @@ function App() {
     
     CRITICAL INSTRUCTIONS:
     1. Generate a COMPREHENSIVE README that is AT LEAST 400-600 lines long
-    2. Include REAL, DETAILED content - not just placeholders
-    3. Create multiple detailed code examples with explanations
-    4. Add substantial content to each section - no short paragraphs
-    5. Include proper markdown formatting with headers, lists, code blocks, tables
-    6. Generate realistic examples based on the repository's programming language
-    7. Create detailed installation instructions for multiple platforms
-    8. Include comprehensive API documentation if applicable
-    9. Add troubleshooting section with real scenarios
-    10. Make it production-ready and professional
+    2. Use EMOJIS throughout the document for visual appeal (✨🚀🎨📱🔧💡🌙⚡🛡️📋🛠️📖🎯etc.)
+    3. Include REAL, DETAILED content - NO placeholders, NO "(To be added)", NO "[Configuration options]"
+    4. Create multiple detailed code examples with realistic function names, variables, and implementations
+    5. Add substantial content to each section - no short paragraphs
+    6. Include proper markdown formatting with headers, lists, code blocks, tables
+    7. Generate realistic examples based on the repository's programming language
+    8. Create detailed installation instructions for multiple platforms
+    9. Include comprehensive API documentation with real endpoint examples
+    10. Add troubleshooting section with real scenarios and solutions
+    11. Make it production-ready and professional
+    12. Use attractive formatting like centered text, aligned sections, and visual elements
+    13. Include relevant badges for the technology stack
+    14. Add compelling descriptions with emphasis using **bold** and > quotes
+    15. Generate realistic file names, function names, variable names, and configuration options
+    16. Provide complete, working code examples that developers can actually use
+    17. Create realistic project descriptions, features, and use cases
+    18. Include actual command examples, not placeholder commands
     
     STRUCTURE (include ALL sections with substantial content):
-    - Project title with badges
-    - Detailed description (multiple paragraphs)
-    - Table of contents
-    - Features (comprehensive list)
-    - Installation (multiple methods)
+    - Project title with emojis and badges
+    - Compelling description with > quotes and emphasis
+    - Table of contents with emoji navigation
+    - Features (comprehensive list with emojis)
+    - Technology Stack (formatted table)
+    - Prerequisites (detailed requirements)
+    - Installation (multiple methods with emojis)
     - Usage (multiple examples with code)
     - API Reference (if applicable)
     - Configuration
@@ -210,8 +227,28 @@ function App() {
     - FAQ
     - License
     - Support/Contact
+    - Acknowledgments
     
-    Generate ONLY the markdown content. Make it comprehensive, detailed, and professional.
+    FORMATTING STYLE GUIDE:
+    - Use emojis for section headers: ## 🚀 Installation
+    - Use emojis for feature lists: - 🎨 **Feature**: Description
+    - Add compelling quotes: > **Professional description with emphasis**
+    - Include developer info: 👨‍💻 **Developer**: [Owner Name](actual-link)
+    - Add centered footer: <div align="center">Built with ❤️</div>
+    - Use attractive badges based on tech stack
+    - Format tables professionally with | Technology | Purpose | Version |
+    
+    CONTENT REQUIREMENTS:
+    - NO PLACEHOLDERS: Never use [brackets], (To be added), [Configuration options], etc.
+    - Generate realistic project names, feature names, function names, and examples
+    - Create complete, working code examples that developers can copy and use
+    - Provide actual file paths, realistic URLs, and proper command examples
+    - Generate specific environment variables, configuration options, and API endpoints
+    - Write complete installation instructions with real commands
+    - Create detailed troubleshooting sections with actual problems and solutions
+    - Generate realistic use cases and examples based on the project's language and purpose
+    
+    Generate ONLY the markdown content. Make it comprehensive, detailed, professional, visually appealing with emojis throughout, and completely ready-to-use without any placeholders.
     `;
 
     try {
@@ -298,102 +335,469 @@ function App() {
     switch (template) {
       case 'attractive':
         return `
-        Create a visually stunning and comprehensive README with ALL of the following sections:
-        - A beautiful banner/logo section with project title
-        - Comprehensive project description (3-4 paragraphs)
-        - Eye-catching badges for build status, version, license, downloads, etc.
-        - Detailed table of contents with links
-        - Screenshots/GIFs section (with placeholder descriptions)
-        - Comprehensive features list (at least 8-10 features)
-        - Quick start guide with multiple examples
-        - Detailed installation instructions for different platforms
-        - Usage examples with code blocks (at least 3-4 examples)
-        - API documentation section with endpoints/methods
-        - Configuration options and environment variables
-        - Troubleshooting section with common issues
-        - Contributing guidelines with PR process
-        - Code of conduct section
-        - License information
-        - Acknowledgments and credits
-        - Roadmap/future plans
-        - FAQ section
-        - Support and community links
-        - Changelog highlights
-        Make it at least 500+ lines with rich formatting, emojis, and detailed content.
+        Create a visually stunning and comprehensive README with emojis and modern formatting following this structure:
+
+        # [Actual Project Name] - [Creative Tagline Based on Project Purpose]
+
+        [Add specific badges like React, Vite, TypeScript, etc. based on actual tech stack detected]
+
+        > **[Write compelling description highlighting the project's main value proposition]**
+
+        🌐 **Live Demo**: https://project-demo.vercel.app  
+        👨‍💻 **Developer**: [Owner Name](https://github.com/[owner])  
+        📂 **Repository**: [Actual GitHub URL]
+
+        ## ✨ Features
+
+        - 🚀 **[Generate specific feature based on project type]**: [Detailed implementation description]
+        - 🎨 **[Generate relevant UI/design feature]**: [Specific functionality explanation]
+        - 📱 **[Generate responsive/mobile feature]**: [Technical implementation details]
+        - 🔧 **[Generate configuration feature]**: [Actual configuration options]
+        - 💡 **[Generate smart/AI feature if applicable]**: [Detailed capability description]
+        - 🌙 **[Generate theme/styling feature]**: [Specific styling options]
+        - ⚡ **[Generate performance feature]**: [Optimization details with metrics]
+        - 🛡️ **[Generate security feature]**: [Security implementation specifics]
+
+        ## 🛠️ Technology Stack
+
+        | Technology | Purpose | Version |
+        |------------|---------|---------|
+        | [Generate based on detected languages and files] | [Specific purpose] | [Current version] |
+
+        ## 📋 Prerequisites
+
+        Before running this project, make sure you have:
+
+        - **Node.js** (v18.0.0 or higher) - [Download here](https://nodejs.org/)
+        - **npm** or **yarn** package manager
+        - **[Generate specific requirement based on project]** ([provide actual setup instructions])
+        - **Modern web browser** (Chrome, Firefox, Safari, Edge)
+
+        ## 🚀 Installation & Setup
+
+        ### 1. Clone the Repository
+        \`\`\`bash
+        git clone [actual repo URL]
+        cd [actual project name]
+        \`\`\`
+
+        ### 2. Install Dependencies
+        \`\`\`bash
+        npm install
+        # or if using yarn
+        yarn install
+        \`\`\`
+
+        ### 3. Environment Configuration
+        \`\`\`bash
+        # Create environment file
+        cp .env.example .env.local
+
+        # Add your configuration (generate realistic examples):
+        VITE_API_KEY=your_api_key_here
+        VITE_APP_URL=http://localhost:3000
+        DATABASE_URL=postgresql://user:password@localhost:5432/dbname
+        \`\`\`
+
+        ### 4. Start Development Server
+        \`\`\`bash
+        npm run dev
+        # or
+        yarn dev
+        \`\`\`
+
+        The application will be available at \`http://localhost:3000\`
+
+        ## 📖 Usage Guide
+
+        ### Step 1: [Generate specific first step based on project type]
+        - [Provide detailed instructions with actual examples]
+        - [Include realistic data/inputs to use]
+
+        ### Step 2: [Generate logical second step]
+        - [Detailed process with code examples]
+        - [Expected outcomes and results]
+
+        ### Step 3: [Generate additional steps as needed]
+        - [Complete workflow examples]
+
+        ## 🎯 API Reference
+
+        [Generate realistic API documentation based on project type with actual endpoints, parameters, and responses]
+
+        ### Authentication
+        \`\`\`javascript
+        // Example authentication setup
+        const apiKey = process.env.VITE_API_KEY;
+        const headers = {
+          'Authorization': \`Bearer \${apiKey}\`,
+          'Content-Type': 'application/json'
+        };
+        \`\`\`
+
+        ### Available Endpoints
+        [Generate realistic endpoints with examples]
+
+        ## 🔧 Configuration
+
+        [Generate actual configuration options based on project type]
+
+        ### Environment Variables
+        \`\`\`env
+        # Required
+        VITE_API_KEY=your_api_key
+        VITE_APP_NAME=YourAppName
+
+        # Optional
+        VITE_DEBUG_MODE=true
+        VITE_ANALYTICS_ID=GA-XXXXXXXXX
+        \`\`\`
+
+        ### Advanced Configuration
+        [Provide real configuration examples with actual file structures]
+
+        ## 🤝 Contributing
+
+        Contributions are welcome! Here's how you can help:
+
+        1. Fork the repository
+        2. Create a feature branch: \`git checkout -b feature/amazing-feature\`
+        3. Commit your changes: \`git commit -m 'Add amazing feature'\`
+        4. Push to the branch: \`git push origin feature/amazing-feature\`
+        5. Open a Pull Request
+
+        ## 📄 License
+
+        This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+        ## 🙏 Acknowledgments
+
+        - **[Generate relevant tool/service]** for [specific contribution]
+        - **[Generate another relevant acknowledgment]** for [specific purpose]
+        - **Open source community** for inspiration and support
+
+        ---
+
+        <div align="center">
+          <p>Built with ❤️ by <a href="https://github.com/[owner]">[Owner Name]</a></p>
+          <p>© 2025 [Project Name]. All rights reserved.</p>
+        </div>
+
+        Make it at least 500+ lines with rich, realistic content, emojis throughout, and professional formatting. NO placeholders - everything should be complete and usable.
         `;
       case 'detailed':
         return `
-        Create a comprehensive technical documentation README with ALL sections:
-        - Executive summary and project overview (detailed)
-        - Architecture overview with diagrams descriptions
-        - Prerequisites and system requirements
-        - Step-by-step installation guide for multiple environments
-        - Detailed configuration instructions
-        - Complete API reference with examples
-        - Usage patterns and best practices
-        - Code examples for different use cases (at least 5-6 examples)
-        - Testing instructions (unit, integration, e2e)
-        - Deployment guide for different platforms
-        - Performance considerations and optimization
-        - Security best practices
-        - Monitoring and logging setup
-        - Troubleshooting guide with solutions
-        - Contributing guidelines with development setup
-        - Code style and conventions
-        - Review process and CI/CD information
-        - Versioning strategy
-        - Documentation guidelines
-        - Support channels and issue reporting
-        - License and legal information
-        - Extensive FAQ section
-        - Glossary of terms
-        Make it extremely detailed with at least 600+ lines, include code blocks, tables, and comprehensive explanations.
+        Create a comprehensive technical documentation README with emojis and modern formatting:
+
+        # [Project Name] - [Technical Description]
+
+        [Professional badges for build, coverage, version, etc.]
+
+        > **[Detailed project description with technical focus]**
+
+        🔗 **Documentation**: [Link]  
+        🚀 **Live Demo**: [Link]  
+        📊 **Metrics**: [Link]
+
+        ## 📋 Table of Contents
+
+        - [📖 Overview](#overview)
+        - [⚡ Features](#features)
+        - [🏗️ Architecture](#architecture)
+        - [🛠️ Installation](#installation)
+        - [📖 Usage](#usage)
+        - [🔧 Configuration](#configuration)
+        - [🧪 Testing](#testing)
+        - [🚀 Deployment](#deployment)
+        - [📚 API Reference](#api-reference)
+        - [🤝 Contributing](#contributing)
+
+        ## 📖 Overview
+
+        [Detailed technical overview with multiple paragraphs]
+
+        ## ⚡ Features
+
+        ### 🏢 Core Features
+        - 🎯 **[Feature]**: [Technical description]
+        - 🔐 **[Feature]**: [Technical description]
+
+        ### 🔧 Developer Features
+        - 🛠️ **[Feature]**: [Technical description]
+        - 📊 **[Feature]**: [Technical description]
+
+        ## 🏗️ Architecture
+
+        [Describe system architecture with technical details]
+
+        ## 🛠️ Installation
+
+        ### 📋 Prerequisites
+
+        - 🐧 **OS**: [Requirements]
+        - 🟢 **Node.js**: [Version requirements]
+        - 📦 **Package Manager**: [npm/yarn requirements]
+
+        ### 🚀 Quick Start
+
+        \`\`\`bash
+        # Clone and setup
+        git clone [repo]
+        cd [project]
+        npm install
+        npm run dev
+        \`\`\`
+
+        ### 🔧 Advanced Installation
+
+        [Detailed installation steps with multiple environments]
+
+        ## 📖 Usage
+
+        ### 🌟 Basic Usage
+
+        \`\`\`javascript
+        // Example code with detailed comments
+        \`\`\`
+
+        ### 🔧 Advanced Usage
+
+        [Multiple code examples with explanations]
+
+        ## 🧪 Testing
+
+        ### 📋 Test Types
+
+        - 🧪 **Unit Tests**: \`npm test\`
+        - 🔗 **Integration Tests**: \`npm run test:integration\`
+        - 🌐 **E2E Tests**: \`npm run test:e2e\`
+
+        ## 🚀 Deployment
+
+        [Deployment instructions for multiple platforms]
+
+        ## 📚 API Reference
+
+        [Comprehensive API documentation with examples]
+
+        ## 🤝 Contributing
+
+        [Detailed contributing guidelines]
+
+        ## 📄 License
+
+        This project is licensed under the [License Type] License.
+
+        Make it extremely detailed with at least 600+ lines, technical depth, and emoji navigation.
         `;
       case 'minimal':
         return `
-        Create a clean but complete README with these essential sections:
-        - Clear project title and description (2-3 paragraphs)
-        - Key features list (6-8 main features)
-        - Installation instructions (multiple methods)
-        - Basic usage examples with code (3-4 examples)
-        - Configuration options
-        - API reference (if applicable)
-        - Contributing guidelines
-        - Testing instructions
-        - Deployment notes
-        - License information
-        - Support contact
-        - FAQ section (5-6 common questions)
-        Keep formatting clean but make content substantial - at least 300+ lines with good examples.
+        Create a clean but attractive README with essential emojis and complete content:
+
+        # [Actual Project Name]
+
+        [Generate specific badges based on detected tech stack]
+
+        > **[Write clear, compelling description of what the project does]**
+
+        ## ✨ Features
+
+        - 🚀 **[Generate specific feature name]**: [Detailed description of capability]
+        - 🎨 **[Generate design/UI feature]**: [Specific implementation details]
+        - 📱 **[Generate responsive feature]**: [Mobile/desktop capabilities]
+        - 🔧 **[Generate configuration feature]**: [Customization options]
+
+        ## 🛠️ Installation
+
+        \`\`\`bash
+        # Clone the repository
+        git clone [actual repo URL]
+        cd [actual project name]
+
+        # Install dependencies
+        npm install
+
+        # Start development server
+        npm run dev
+        \`\`\`
+
+        ## 📖 Usage
+
+        \`\`\`javascript
+        // Generate realistic usage example based on project type
+        import { [GenerateRelevantImport] } from '[project-name]';
+
+        const [relevantVariable] = new [GenerateClassName]({
+          [generateRelevantConfig]: '[realistic-value]',
+          [generateAnotherOption]: true
+        });
+
+        // Example usage
+        [relevantVariable].[generateMethod]()
+          .then(result => {
+            console.log('Success:', result);
+          })
+          .catch(error => {
+            console.error('Error:', error);
+          });
+        \`\`\`
+
+        ## 🔧 Configuration
+
+        Create a \`.env\` file in your project root:
+
+        \`\`\`env
+        # Required environment variables
+        VITE_API_URL=https://api.example.com
+        VITE_API_KEY=your_api_key_here
+
+        # Optional settings
+        VITE_DEBUG_MODE=false
+        VITE_THEME=dark
+        \`\`\`
+
+        ### Available Options
+
+        | Option | Type | Default | Description |
+        |--------|------|---------|-------------|
+        | [generateOption1] | string | '[defaultValue]' | [Description of what this controls] |
+        | [generateOption2] | boolean | false | [Explanation of this setting] |
+        | [generateOption3] | number | 3000 | [What this number represents] |
+
+        ## 🧪 Testing
+
+        \`\`\`bash
+        # Run all tests
+        npm test
+
+        # Run tests in watch mode
+        npm run test:watch
+
+        # Generate coverage report
+        npm run test:coverage
+        \`\`\`
+
+        ## 🚀 Deployment
+
+        ### Vercel (Recommended)
+        \`\`\`bash
+        npm install -g vercel
+        vercel --prod
+        \`\`\`
+
+        ### Netlify
+        \`\`\`bash
+        npm run build
+        # Deploy the dist/ folder to Netlify
+        \`\`\`
+
+        ## 🤝 Contributing
+
+        1. Fork the repository
+        2. Create your feature branch: \`git checkout -b feature/new-feature\`
+        3. Commit your changes: \`git commit -m 'Add new feature'\`
+        4. Push to the branch: \`git push origin feature/new-feature\`
+        5. Submit a pull request
+
+        ## 📄 License
+
+        This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+        Keep formatting clean but substantial - at least 300+ lines with realistic examples and complete information. NO placeholders - generate actual, usable content.
         `;
       case 'showcase':
         return `
-        Create a project showcase README with comprehensive content:
-        - Compelling project introduction with value proposition
-        - Hero section with key benefits (detailed)
-        - Live demo links and screenshots descriptions
-        - Comprehensive features showcase (10+ features with descriptions)
-        - Use cases and real-world applications (5-6 scenarios)
-        - Before/after comparisons or results
-        - Performance metrics and benchmarks
-        - Technology stack breakdown
-        - Architecture overview
-        - Installation and quick start guide
-        - Multiple usage examples with outcomes
-        - Integration examples with other tools
-        - Customization options and themes
-        - Community showcase and testimonials
-        - Case studies section
-        - Roadmap with upcoming features
-        - Contributing to the showcase
-        - Recognition and awards
-        - Media mentions and coverage
-        - Support and community
-        - FAQ for users
-        Make it visually appealing and comprehensive with at least 500+ lines.
+        Create a project showcase README with stunning visual appeal:
+
+        # 🌟 [Project Name] - [Compelling Tagline]
+
+        [Impressive badges array]
+
+        > **[Powerful value proposition with emphasis and benefits]**
+
+        🎯 **Live Demo**: [Link] | 📊 **Analytics**: [Link] | 🏆 **Showcase**: [Link]
+
+        ## 🚀 Why Choose [Project Name]?
+
+        ### 💎 Key Benefits
+        - ⚡ **[Benefit]**: [Compelling description with metrics]
+        - 🎨 **[Benefit]**: [Compelling description with results]
+        - 🚀 **[Benefit]**: [Compelling description with impact]
+
+        ## ✨ Feature Showcase
+
+        ### 🎯 Core Features
+        - 🤖 **[Feature]**: [Detailed description with benefits]
+        - 🎨 **[Feature]**: [Detailed description with benefits]
+        - 📊 **[Feature]**: [Detailed description with benefits]
+        - 🔒 **[Feature]**: [Detailed description with benefits]
+
+        ### 🌟 Advanced Features
+        - 🚀 **[Feature]**: [Advanced capability description]
+        - 🛠️ **[Feature]**: [Advanced capability description]
+
+        ## 🎬 Demo & Screenshots
+
+        [Describe demo scenarios and screenshot placeholders]
+
+        ## 🏁 Quick Start
+
+        Get up and running in minutes:
+
+        \`\`\`bash
+        # One-line installation
+        npx [package-name] init my-project
+        cd my-project
+        npm start
+        \`\`\`
+
+        ## 🎯 Use Cases
+
+        ### 🏢 For Businesses
+        - [Use case with benefits]
+
+        ### 👩‍💻 For Developers
+        - [Use case with benefits]
+
+        ## 📊 Performance & Metrics
+
+        [Performance highlights and benchmarks]
+
+        ## 🎨 Customization
+
+        [Customization options and themes]
+
+        ## 🌟 Community Showcase
+
+        [Community examples and testimonials]
+
+        ## 🗺️ Roadmap
+
+        [Upcoming features and timeline]
+
+        ## 🏆 Recognition
+
+        [Awards, mentions, testimonials]
+
+        ## 🤝 Contributing
+
+        Join our amazing community! [Contributing guidelines]
+
+        ## 📄 License
+
+        [License with link]
+
+        ---
+
+        <div align="center">
+          <h3>🌟 Star this project if you find it useful! 🌟</h3>
+          <p>Built with ❤️ by [Developer Name]</p>
+        </div>
+
+        Make it visually stunning and comprehensive with at least 500+ lines, rich emojis, and showcase appeal.
         `;
       default:
-        return 'Create a comprehensive README file with detailed sections and substantial content (400+ lines).';
+        return 'Create a comprehensive README file with emojis, attractive formatting, and detailed sections (400+ lines).';
     }
   };
 
@@ -718,6 +1122,112 @@ SOFTWARE.`;
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error('Failed to copy license text:', err);
+    }
+  };
+
+  const handleGenerateSuggestions = async () => {
+    if (!repoInfo) {
+      setError('Please generate a README first to get AI suggestions.');
+      return;
+    }
+
+    if (showAiSuggestions && aiSuggestions.length > 0) {
+      // If suggestions are already shown, just toggle visibility
+      setShowAiSuggestions(false);
+      return;
+    }
+
+    try {
+      setShowAiSuggestions(true);
+      const repoData = { repo: repoInfo };
+      await generateAISuggestions(repoData);
+    } catch (error) {
+      console.error('Failed to generate suggestions:', error);
+      setError('Failed to generate AI suggestions. Please try again.');
+      setShowAiSuggestions(false);
+    }
+  };
+
+  const handleAnalyzeReadme = async () => {
+    if (!analysisReadmeContent.trim()) {
+      setError('Please provide README content to analyze.');
+      return;
+    }
+
+    setAnalysisLoading(true);
+    setError('');
+    setAnalysisSuggestions([]);
+
+    try {
+      // Extract repo info if URL is provided
+      let repoData = null;
+      if (analysisRepoUrl.trim()) {
+        const repoInfo = extractRepoInfo(analysisRepoUrl);
+        if (repoInfo) {
+          repoData = await fetchRepoData(repoInfo.owner, repoInfo.repo);
+        }
+      }
+
+      const prompt = `Analyze this README content and provide 5 specific improvement suggestions:
+
+README Content:
+${analysisReadmeContent}
+
+${repoData ? `Repository Information:
+- Name: ${repoData.repo.name}
+- Language: ${repoData.repo.language}
+- Description: ${repoData.repo.description}
+- Stars: ${repoData.repo.stargazers_count}` : ''}
+
+Provide specific, actionable suggestions for improving this README. Return ONLY a valid JSON array (no markdown, no code blocks, no extra text):
+[{"title": "suggestion title", "description": "detailed description with specific examples", "priority": "high/medium/low", "category": "structure/content/formatting/completeness"}]
+
+Focus on:
+1. Missing sections or content
+2. Formatting and structure improvements
+3. Code examples and documentation clarity
+4. Professional presentation
+5. User experience and accessibility`;
+
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: prompt }] }],
+            generationConfig: { maxOutputTokens: 2000 }
+          })
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`AI analysis failed: ${response.status}`);
+      }
+
+      const data = await response.json();
+      
+      // Extract and clean the AI response
+      let aiResponse = data.candidates[0].content.parts[0].text;
+      
+      // Remove markdown code blocks if present
+      aiResponse = aiResponse.replace(/```json\s*/g, '').replace(/```\s*$/g, '').trim();
+      
+      // Parse the cleaned JSON
+      const suggestions = JSON.parse(aiResponse);
+      setAnalysisSuggestions(suggestions);
+      setShowAnalysisSuggestions(true);
+    } catch (error) {
+      console.error('Failed to analyze README:', error);
+      
+      // Log the raw AI response for debugging
+      if (error.name === 'SyntaxError' && data?.candidates?.[0]?.content?.parts?.[0]?.text) {
+        console.error('Raw AI response:', data.candidates[0].content.parts[0].text);
+      }
+      
+      setError('Failed to analyze README. Please try again.');
+    } finally {
+      setAnalysisLoading(false);
     }
   };
 
@@ -1282,13 +1792,6 @@ SOFTWARE.`;
                         </div>
                       )}
                       <button
-                        onClick={() => setShowAiSuggestions(!showAiSuggestions)}
-                        className="btn-secondary flex items-center space-x-2"
-                      >
-                        <Lightbulb className="w-4 h-4" />
-                        <span>Suggestions</span>
-                      </button>
-                      <button
                         onClick={handleCopy}
                         className="btn-secondary flex items-center space-x-2"
                       >
@@ -1353,32 +1856,7 @@ SOFTWARE.`;
                 </div>
               </div>
 
-              {/* AI Suggestions Panel */}
-              {showAiSuggestions && aiSuggestions.length > 0 && (
-                <div className="card-dark rounded-lg p-4 mb-4">
-                  <div className="flex items-center space-x-2 mb-3">
-                    <Lightbulb className="w-5 h-5 text-yellow-400" />
-                    <h4 className="text-lg font-semibold text-white">AI Suggestions</h4>
-                  </div>
-                  <div className="space-y-3">
-                    {aiSuggestions.map((suggestion, index) => (
-                      <div key={index} className="border border-gray-600 rounded-lg p-3">
-                        <div className="flex items-center justify-between mb-2">
-                          <h5 className="font-medium text-white">{suggestion.title}</h5>
-                          <span className={`text-xs px-2 py-1 rounded ${
-                            suggestion.priority === 'high' ? 'bg-red-500/20 text-red-400' :
-                            suggestion.priority === 'medium' ? 'bg-yellow-500/20 text-yellow-400' :
-                            'bg-green-500/20 text-green-400'
-                          }`}>
-                            {suggestion.priority}
-                          </span>
-                        </div>
-                        <p className="text-gray-400 text-sm">{suggestion.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+
 
               {/* Quality Metrics */}
               {readmeQuality && (
@@ -1470,6 +1948,148 @@ SOFTWARE.`;
                   </div>
                 </div>
               )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* README Analysis Section */}
+      <div className="border-t border-gray-700 py-16" id="analysis">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-white mb-4">README Analysis & Suggestions</h3>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Already have a README? Get AI-powered suggestions to improve it! Paste your existing README content 
+              and optionally provide your repository URL for context-aware recommendations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Input Section */}
+            <div className="lg:col-span-5">
+              <div className="card-dark rounded-lg p-6">
+                <div className="flex items-center space-x-2 mb-6">
+                  <Lightbulb className="w-5 h-5 text-yellow-400" />
+                  <h4 className="text-lg font-semibold text-white">Analyze Your README</h4>
+                </div>
+
+                {/* Repository URL (Optional) */}
+                <div className="mb-6">
+                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                    Repository URL <span className="text-gray-500">(Optional)</span>
+                  </label>
+                  <div className="relative">
+                    <Github className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <input
+                      type="url"
+                      value={analysisRepoUrl}
+                      onChange={(e) => setAnalysisRepoUrl(e.target.value)}
+                      placeholder="https://github.com/username/repository"
+                      className="input-field w-full pl-12"
+                    />
+                  </div>
+                  <div className="mt-2 text-xs text-gray-400">
+                    💡 Providing your repo URL helps generate more contextual suggestions
+                  </div>
+                </div>
+
+                {/* README Content */}
+                <div className="mb-6">
+                  <label className="block text-gray-300 text-sm font-medium mb-2">
+                    README Content <span className="text-red-400">*</span>
+                  </label>
+                  <textarea
+                    value={analysisReadmeContent}
+                    onChange={(e) => setAnalysisReadmeContent(e.target.value)}
+                    placeholder="Paste your existing README.md content here..."
+                    className="input-field w-full h-64 resize-none font-mono text-sm"
+                    required
+                  />
+                  <div className="mt-2 text-xs text-gray-400">
+                    📝 Paste your current README content in Markdown format
+                  </div>
+                </div>
+
+                {/* Analyze Button */}
+                <button
+                  onClick={handleAnalyzeReadme}
+                  disabled={analysisLoading || !analysisReadmeContent.trim()}
+                  className={`w-full btn-primary flex items-center justify-center space-x-2 ${
+                    analysisLoading || !analysisReadmeContent.trim() ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
+                >
+                  {analysisLoading ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                      <span>Analyzing...</span>
+                    </>
+                  ) : (
+                    <>
+                      <BarChart3 className="w-4 h-4" />
+                      <span>Analyze README</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+
+            {/* Results Section */}
+            <div className="lg:col-span-7">
+              <div className="card-dark rounded-lg overflow-hidden">
+                <div className="flex items-center justify-between p-4 border-b border-gray-700">
+                  <div className="flex items-center space-x-2">
+                    <Lightbulb className="w-5 h-5 text-yellow-400" />
+                    <h4 className="text-lg font-semibold text-white">AI Suggestions</h4>
+                  </div>
+                  {analysisSuggestions.length > 0 && (
+                    <div className="flex items-center space-x-2 px-3 py-1 bg-yellow-500/20 rounded-lg">
+                      <span className="text-sm text-yellow-400 font-medium">
+                        {analysisSuggestions.length} suggestions
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                <div className="p-4">
+                  {analysisSuggestions.length > 0 ? (
+                    <div className="space-y-4">
+                      {analysisSuggestions.map((suggestion, index) => (
+                        <div key={index} className="border border-gray-600 rounded-lg p-4 hover:bg-gray-700/30 transition-colors">
+                          <div className="flex items-start justify-between mb-3">
+                            <h5 className="font-medium text-white text-lg">{suggestion.title}</h5>
+                            <div className="flex items-center space-x-2">
+                              <span className={`text-xs px-2 py-1 rounded ${
+                                suggestion.priority === 'high' ? 'bg-red-500/20 text-red-400' :
+                                suggestion.priority === 'medium' ? 'bg-yellow-500/20 text-yellow-400' :
+                                'bg-green-500/20 text-green-400'
+                              }`}>
+                                {suggestion.priority}
+                              </span>
+                              {suggestion.category && (
+                                <span className="text-xs px-2 py-1 bg-blue-500/20 text-blue-400 rounded">
+                                  {suggestion.category}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          <p className="text-gray-300 text-sm leading-relaxed">{suggestion.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="flex items-center justify-center h-64 text-gray-400">
+                      <div className="text-center">
+                        <Lightbulb className="w-16 h-16 mx-auto mb-4 opacity-50" />
+                        <p className="text-lg mb-2">Ready to analyze your README</p>
+                        <p className="text-sm mb-4">Paste your README content and click "Analyze README" to get started</p>
+                        <div className="text-xs text-gray-500">
+                          <p>🎯 Get personalized improvement suggestions</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>
