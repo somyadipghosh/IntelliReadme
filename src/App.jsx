@@ -4,7 +4,7 @@ import {
   Terminal, Code, GitBranch, Users, Eye, Clock, Settings, 
   BookOpen, Rocket, Award, TrendingUp, ExternalLink, Globe,
   Instagram, Linkedin, Twitter, Lightbulb, BarChart3,
-  Palette, Save, RefreshCw, Search, Filter, Moon, Sun, Upload
+  Palette, Save, RefreshCw, Search, Filter, Moon, Sun, Upload, Menu, X
 } from 'lucide-react';
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
@@ -79,6 +79,9 @@ function App() {
   const [analysisLoading, setAnalysisLoading] = useState(false);
   const [analysisSuggestions, setAnalysisSuggestions] = useState([]);
   const [showAnalysisSuggestions, setShowAnalysisSuggestions] = useState(false);
+
+  // Mobile menu state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const extractRepoInfo = (url) => {
     const regex = /github\.com\/([^\/]+)\/([^\/]+)/;
@@ -1246,8 +1249,10 @@ Focus on:
                 v2.0.1
               </span>
             </div>
-            <div className="flex items-center space-x-4">
-              <div className="hidden md:flex items-center space-x-6">
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-4">
+              <div className="flex items-center space-x-6">
                 <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
                 <a href="#templates" className="text-gray-300 hover:text-white transition-colors">Templates</a>
                 <a href="#docs" className="text-gray-300 hover:text-white transition-colors">Documentation</a>
@@ -1283,7 +1288,86 @@ Focus on:
                 </a>
               </div>
             </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden text-gray-300 hover:text-white transition-colors p-2"
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden mt-4 pt-4 border-t border-gray-700">
+              <div className="space-y-4">
+                <div className="space-y-3">
+                  <a 
+                    href="#features" 
+                    className="block text-gray-300 hover:text-white transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Features
+                  </a>
+                  <a 
+                    href="#templates" 
+                    className="block text-gray-300 hover:text-white transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Templates
+                  </a>
+                  <a 
+                    href="#docs" 
+                    className="block text-gray-300 hover:text-white transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Documentation
+                  </a>
+                  <a 
+                    href="#contact" 
+                    className="block text-gray-300 hover:text-white transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Contact
+                  </a>
+                </div>
+                <div className="pt-4 border-t border-gray-700 space-y-3">
+                  <a 
+                    href="https://github.com/somyadipghosh" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-secondary flex items-center space-x-2 w-full justify-center"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Github className="w-4 h-4" />
+                    <span>GitHub</span>
+                  </a>
+                  <a 
+                    href="https://github.com/somyadipghosh/IntelliReadme" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-secondary flex items-center space-x-2 w-full justify-center"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <GitBranch className="w-4 h-4" />
+                    <span>Contribute</span>
+                  </a>
+                  <a 
+                    href="https://www.somyadip.me/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-primary flex items-center space-x-2 w-full justify-center"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Globe className="w-4 h-4" />
+                    <span>Portfolio</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </header>
 
