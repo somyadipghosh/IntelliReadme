@@ -2181,10 +2181,10 @@ Focus on:
                 </li>
                 <li>
                   <a 
-                    href="mailto:hello@somyadip.me" 
+                    href="mailto:somyadipghosh@gmail.com" 
                     className="hover:text-white transition-colors"
                   >
-                    Email: hello@somyadip.me
+                    Email: somyadipghosh@gmail.com
                   </a>
                 </li>
                 <li>
