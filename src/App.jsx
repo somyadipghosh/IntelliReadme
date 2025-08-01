@@ -1264,7 +1264,7 @@ Focus on:
                   <span>GitHub</span>
                 </a>
                 <a 
-                  href="https://github.com/somyadipghosh/readmegenerator" 
+                  href="https://github.com/somyadipghosh/IntelliReadme" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn-secondary flex items-center space-x-2"
@@ -2153,7 +2153,7 @@ Focus on:
                 <li><a href="#templates" className="hover:text-white transition-colors">Templates</a></li>
                 <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
                 <li><a href="#docs" className="hover:text-white transition-colors">Documentation</a></li>
-                <li><a href="https://github.com/somyadipghosh" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Source Code</a></li>
+                <li><a href="https://github.com/somyadipghosh/IntelliReadme" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Source Code</a></li>
               </ul>
             </div>
             <div>

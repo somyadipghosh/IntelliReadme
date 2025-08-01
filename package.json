@@ -3,6 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "IntelliReadme - AI-Powered README Generator that creates stunning, comprehensive documentation with zero placeholders",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/somyadipghosh/IntelliReadme.git"
+  },
+  "homepage": "https://github.com/somyadipghosh/IntelliReadme",
+  "bugs": {
+    "url": "https://github.com/somyadipghosh/IntelliReadme/issues"
+  },
+  "keywords": ["readme", "generator", "ai", "documentation", "github", "markdown", "intelligent"],
+  "author": "Somyadip Ghosh <somyadipghosh@example.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

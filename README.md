@@ -10,8 +10,8 @@
 
 🌐 **Live Demo**: [IntelliReadme](http://localhost:5173)  
 👨‍💻 **Developer**: [Somyadip Ghosh](https://www.somyadip.me/)  
-📂 **Repository**: [GitHub](https://github.com/somyadipghosh/intellireadme)  
-⭐ **Contribute**: [Support on GitHub](https://github.com/somyadipghosh/intellireadme)
+📂 **Repository**: [GitHub](https://github.com/somyadipghosh/IntelliReadme)  
+⭐ **Contribute**: [Support on GitHub](https://github.com/somyadipghosh/IntelliReadme)
 
 ## ✨ Revolutionary Features
 
@@ -65,8 +65,8 @@ Before running this project, make sure you have:
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/somyadipghosh/intellireadme.git
-cd intellireadme
+git clone https://github.com/somyadipghosh/IntelliReadme.git
+cd IntelliReadme
 ```
 
 ### 2. Install Dependencies
@@ -371,7 +371,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   
   <br>
   
-  <a href="https://github.com/somyadipghosh/intellireadme">⭐ Star on GitHub</a> •
-  <a href="https://github.com/somyadipghosh/intellireadme/issues">🐛 Report Bug</a> •
-  <a href="https://github.com/somyadipghosh/intellireadme/issues">💡 Request Feature</a>
+  <a href="https://github.com/somyadipghosh/IntelliReadme">⭐ Star on GitHub</a> •
+  <a href="https://github.com/somyadipghosh/IntelliReadme/issues">🐛 Report Bug</a> •
+  <a href="https://github.com/somyadipghosh/IntelliReadme/issues">💡 Request Feature</a>
 </div>
